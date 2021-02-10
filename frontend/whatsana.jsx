@@ -1,10 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { signup } from './util/session_api_util';
+import { signup, login, logout } from './util/session_api_util';
+import configureStore from './store/store'
+import Root from './components/root'
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
-    ReactDOM.render(<h1>Welcome to Whatsana</h1>, root);
+    const store = configureStore();
+    ReactDOM.render(<Root store={store}/>, root);
 });
 
+const store = configureStore();
 window.signup = signup
+window.login = login
+window.logout = logout
+window.getState = store.getState;
+window.dispatch = store.dispatch;
+
