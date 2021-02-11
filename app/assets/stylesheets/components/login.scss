@@ -1,0 +1,109 @@
+body {
+    background-color: rgb(246, 248, 249);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-container {
+    margin-top: 65px;
+    height: 550px;
+    border-style: solid;
+    border-width: 1px;
+    width: 300px;
+    background-color: white;
+    border-color: lightgray;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.demo {
+    margin-top: 60px;
+    background-color: white;
+    height: 43px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: rgb(172, 205, 216);
+}
+
+.border {
+    margin: auto;
+    margin-top: 45px;
+    width: 270px;
+    height: 30px;
+    border-style: solid;
+    border-color: rgb(210, 210, 210);
+    border-top-width: 1px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.border p {
+    display: inline-block;
+  margin: 0;
+  transform: translateY(-50%);
+  background: #fff;
+  padding: 0 .5em;
+  color: rgb(210, 210, 210);
+  font-family: sans-serif;
+}
+
+form {
+    height: 200px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    font-family: sans-serif;
+    
+}
+
+input {
+    background-color: white;
+    height: 45px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: rgb(172, 205, 216);
+    margin-top: 5px;
+}
+
+.label {
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    color: gray;
+    font-size: 12px;
+    margin-top: 20px
+}
+
+.submit {
+    margin-top: 40px;
+    background-color: rgb(121, 110, 255);
+    color: white;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.p {
+    text-align: center;
+    transform: translateY(400%);
+    font-family: sans-serif;
+    font-size: 12px;
+    color: gray;
+
+}
+
+.signup {
+    text-decoration: none;
+    color: lightskyblue;
+}
+
+
+

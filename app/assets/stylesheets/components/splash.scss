@@ -1,0 +1,24 @@
+.splash-nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    margin-right: 15%;
+    margin-top: 8px;
+}
+
+
+.splash-nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-family: Helvetica;
+    padding: 10px;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+#signup {
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+}
