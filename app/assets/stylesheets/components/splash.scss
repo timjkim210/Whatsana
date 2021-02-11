@@ -1,20 +1,37 @@
 .splash-nav {
+    border-width: 1px;
+    border-color: lightgray;
+    border-style: solid;
+}
+
+.splash-nav-right {
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
-    margin-right: 15%;
-    margin-top: 8px;
+    margin-right: 10%;
+    align-items: center;
+    margin-bottom: 5px;
+    transform: translateY(-25%);
 }
 
 
-.splash-nav a {
+.splash-nav-right a {
     text-decoration: none;
     color: black;
     font-weight: 500;
     font-family: Helvetica;
-    padding: 10px;
+    padding: 8px;
     font-size: 15px;
-    margin-left: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.splash-nav-left {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-left: 15px;
+
 }
 
 #signup {

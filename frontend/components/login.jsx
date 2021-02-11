@@ -20,7 +20,6 @@ class Login extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        debugger
         this.props.login(this.state)
         .then(() => this.props.history.push('home'))
     };
@@ -29,17 +28,21 @@ class Login extends React.Component {
 
     render() {
         return (
+            <div className="login-page-box">
             <div className="form-container">
+                <div className="form-container-top">
 
-                <h1>Whatsana</h1>
+                    <Link to="/"><img src={window.asanaLoginLogo} /></Link>
 
                 <button className="demo">Demo Login</button>
+
+                </div>
 
                 <div className="border">
                     <p>or</p>
                 </div>
                 
-                <form>
+                <form onSubmit={this.handleSubmit}>
 
                     <label className="label"> Email address </label>
                         <input
@@ -57,11 +60,12 @@ class Login extends React.Component {
                         />
                     
 
-                    <button className="submit" onClick={this.handleSubmit}>Log In</button>
+                    <button className="submit" >Log In</button>
 
                 </form>
 
                 <p className="p">Don't have an account? <Link className="signup" to="/signup">Sign Up</Link> </p>
+            </div>
             </div>
         )
     }

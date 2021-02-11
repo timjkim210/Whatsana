@@ -1,13 +1,5 @@
-body {
-    background-color: rgb(246, 248, 249);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
 .form-container {
-    margin-top: 65px;
+    margin-top: 5%;
     height: 550px;
     border-style: solid;
     border-width: 1px;
@@ -19,7 +11,22 @@ body {
     display: flex;
     flex-direction: column;
     padding: 30px;
+    transform: translateY(-10%);
 }
+
+.login-page-box {
+    height: 100vh;
+    background-color: rgb(246, 248, 249);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+
 
 h1 {
     text-align: center;
@@ -103,6 +110,20 @@ input {
 .signup {
     text-decoration: none;
     color: lightskyblue;
+}
+
+img {
+    width: 100px;
+    height: auto;
+    transform: translateY(100%);
+    
+}
+
+.form-container-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
 
