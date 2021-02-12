@@ -10,6 +10,8 @@ class Login extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleDemo = this.handleDemo.bind(this);
+        this.clearErrors = this.clearErrors.bind(this);
     }
 
     handleInput(field) {
@@ -21,8 +23,31 @@ class Login extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         this.props.login(this.state)
-        .then(() => this.props.history.push('home'))
+        .then(() => this.props.history.push('/home'))
     };
+
+    handleDemo() {
+        this.props.login({
+            email: 'demo_user@demo_login.com',
+            password: '123456'
+        }).then(() => this.props.history.push('/home'))
+    }
+
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
+    clearErrors() {
+        this.props.removeErrors();
+    }
 
 
 
@@ -34,7 +59,9 @@ class Login extends React.Component {
 
                     <Link to="/"><img src={window.asanaLoginLogo} /></Link>
 
-                <button className="demo">Demo Login</button>
+                    <p>{this.renderErrors()}</p>
+
+                <button className="demo" onClick={() => this.handleDemo()}>Demo Login</button>
 
                 </div>
 
@@ -49,7 +76,7 @@ class Login extends React.Component {
                             type="text"
                             value={this.state.email}
                             onChange={this.handleInput('email')}
-                        />
+                            />
                     
 
                     <label className="label"> Password </label>
@@ -64,7 +91,7 @@ class Login extends React.Component {
 
                 </form>
 
-                <p className="p">Don't have an account? <Link className="signup" to="/signup">Sign Up</Link> </p>
+                <p className="p">Don't have an account? <Link onClick={this.clearErrors} className="signup" to="/signup">Sign Up</Link> </p>
             </div>
             </div>
         )

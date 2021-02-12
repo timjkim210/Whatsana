@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import Splash from './splash';
 import { signup, login } from '../actions/session_actions';

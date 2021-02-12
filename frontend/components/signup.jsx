@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Signup extends React.Component {
     constructor(props) {
@@ -10,6 +11,8 @@ class Signup extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.clearErrors = this.clearErrors.bind(this)
+
     }
 
     handleInput(field) {
@@ -24,43 +27,70 @@ class Signup extends React.Component {
             .then(() => this.props.history.push('/home'))
     }
 
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
+    clearErrors() {
+        this.props.removeErrors();
+    }
+
 
 
     render() {
         return (
             <div>
-                <h2>Welcome to Whatsana!</h2>
-                <form action="">
-                    <label> What's your full name?
+                <Link className="asana-logo" to="/"><img src={window.asanaLoginLogo} /></Link>
+
+                <form className="sign-up-form">
+
+                    <h2>Welcome to Whatsana!</h2>
+                    <br/>
+                    <br/>
+
+
+                    <label> What's your full name?</label>
+
                         <input 
                         type="text"
                         value={this.state.full_name}
                         onChange={this.handleInput('full_name')}
-                        
                         />
-                    </label>
+                        <p>Please enter your name.</p>
 
-                    <label> Email
+                    <label> Email address </label>
                         <input 
                         type="text"
                         value={this.state.email}
                         onChange={this.handleInput('email')}
-
                         />
-                    </label>
+                        <p>Please enter your email address.</p>
 
-                    <label> Password
+                    <label> Password</label>
                         <input 
                         type="password"
                         value={this.state.password}
                         onChange={this.handleInput('password')}
                         />
-                    </label>
+                    <p>Password must be 6 characters or longer.</p>
+                    
 
-                    <button onClick={this.handleSubmit}>Sign Up</button>
+                    <button className="sign-up-btn" onClick={this.handleSubmit}>Sign Up</button>
 
+                        <p className="sign-up-subscript">Wrong account? <Link onClick={this.clearErrors} className="login-link" to="/login">Log in</Link> instead.</p>
+                        <p id="signup-error">{this.renderErrors()}</p>
                 </form>
+                
             </div>
+
         )
     }
 }
