@@ -51,16 +51,25 @@ class Login extends React.Component {
 
 
 
+
+
     render() {
         return (
             <div className="login-page-box">
             <div className="form-container">
                 <div className="form-container-top">
 
-                    <Link to="/"><img src={window.asanaLoginLogo} /></Link>
+                        <Link to="/"><img src={window.whatsanaLogo} /></Link>
 
-                    <p>{this.renderErrors()}</p>
+                    <div>
+                        {
+                                this.props.errors.length > 0 ? (<p>{this.renderErrors()}</p>) : (<h3></h3>)
+                        }
+                    </div>
+                    
 
+                
+                
                 <button className="demo" onClick={() => this.handleDemo()}>Demo Login</button>
 
                 </div>
@@ -69,7 +78,7 @@ class Login extends React.Component {
                     <p>or</p>
                 </div>
                 
-                <form onSubmit={this.handleSubmit}>
+                <form className='form' onSubmit={this.handleSubmit}>
 
                     <label className="label"> Email address </label>
                         <input

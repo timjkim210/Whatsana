@@ -47,48 +47,58 @@ class Signup extends React.Component {
 
     render() {
         return (
-            <div>
-                <Link className="asana-logo" to="/"><img src={window.asanaLoginLogo} /></Link>
+            <div className="signup-box">
 
-                <form className="sign-up-form">
+                <div className="rest-of-page">
 
-                    <h2>Welcome to Whatsana!</h2>
-                    <br/>
-                    <br/>
+                    <Link className="asana-logo" to="/"><img src={window.whatsanaLogo} /></Link>
+
+                    <form className="sign-up-form">
+
+                        <h2>Welcome to Whatsana!</h2>
+                        <br/>
+                        <br/>
 
 
-                    <label> What's your full name?</label>
+                        <label> What's your full name?</label>
 
-                        <input 
-                        type="text"
-                        value={this.state.full_name}
-                        onChange={this.handleInput('full_name')}
-                        />
-                        <p>Please enter your name.</p>
+                            <input 
+                            type="text"
+                            value={this.state.full_name}
+                            onChange={this.handleInput('full_name')}
+                            />
+                            <p>Please enter your name.</p>
 
-                    <label> Email address </label>
-                        <input 
-                        type="text"
-                        value={this.state.email}
-                        onChange={this.handleInput('email')}
-                        />
-                        <p>Please enter your email address.</p>
+                        <label> Email address </label>
+                            <input 
+                            type="text"
+                            value={this.state.email}
+                            onChange={this.handleInput('email')}
+                            />
+                            <p>Please enter your email address.</p>
 
-                    <label> Password</label>
-                        <input 
-                        type="password"
-                        value={this.state.password}
-                        onChange={this.handleInput('password')}
-                        />
-                    <p>Password must be 6 characters or longer.</p>
+                        <label> Password</label>
+                            <input 
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.handleInput('password')}
+                            />
+                        <p>Password must be 6 characters or longer.</p>
+                        
+
+                        <button className="sign-up-btn" onClick={this.handleSubmit}>Sign Up</button>
+
+                            <p className="sign-up-subscript">Wrong account? <Link onClick={this.clearErrors} className="login-link" to="/login">Log in</Link> instead.</p>
+                        <div className="signup-error">
+                            {
+                                this.props.errors.length > 0 ? (<p>{this.renderErrors()}</p>) : (<h3></h3>)
+                            }
+                        </div>
+                    </form>
+
                     
+                </div>
 
-                    <button className="sign-up-btn" onClick={this.handleSubmit}>Sign Up</button>
-
-                        <p className="sign-up-subscript">Wrong account? <Link onClick={this.clearErrors} className="login-link" to="/login">Log in</Link> instead.</p>
-                        <p id="signup-error">{this.renderErrors()}</p>
-                </form>
-                
             </div>
 
         )

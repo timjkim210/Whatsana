@@ -8,7 +8,7 @@ export default ({currentUser}) => {
         <div className="splash-page-box">
             <div className="splash-nav">
                 <div className="splash-nav-left">
-                    <Link to="/"><img src={window.asanaLoginLogo} /></Link>
+                        <Link to="/"><img src={window.whatsanaLogo} /></Link>
                 </div>
 
                 <div className="splash-nav-right">
