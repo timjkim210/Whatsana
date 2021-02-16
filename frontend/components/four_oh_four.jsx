@@ -5,17 +5,6 @@ const FourOhFour = (props) => {
         return (
             <div className="fouroh-page-box">
 
-                <div className="splash-nav">
-                    <div className="splash-nav-left">
-                        <Link to="/"><img src={window.whatsanaLogo} /></Link>
-                    </div>
-
-                    <div className="splash-nav-right">
-                        <Link id="login" to="/login">Log In</Link>
-                        <Link id="signup" to="/signup">Try For Free</Link>
-                    </div>
-                </div>
-
                 <div className="fouroh-main">
                     <h1>This page is lost in space!</h1>
                     <h2>We can't find what you're looking for, but the links below may help.</h2>

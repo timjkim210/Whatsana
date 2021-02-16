@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default ({currentUser}) => {
+    debugger
     const display = currentUser ? (
         <h3>Hi, we'll put the home page here eventually</h3>
     ) : (
