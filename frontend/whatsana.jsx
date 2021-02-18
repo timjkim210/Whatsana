@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import { signup, login, logout } from './util/session_api_util';
 import configureStore from './store/store'
 import Root from './components/root'
+import { allProjects } from './reducers/selectors'
+import { createProject, fetchProjects } from './actions/project_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -26,6 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.logout = logout
     window.getState = window.store.getState;
     window.dispatch = store.dispatch;
+    window.allProjects = allProjects
+    window.createProject = createProject
+    window.fetchProjects = fetchProjects
 });
 
 

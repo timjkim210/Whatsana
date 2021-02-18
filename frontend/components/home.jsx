@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
     constructor(props) {
@@ -12,13 +13,35 @@ class Home extends React.Component {
             .then(() => this.props.history.push('/login'))
     }
 
+    componentDidMount() {
+        this.props.fetchProjects();
+    }
+
     render() {
-        return (
-            <div>
-                <h1>Home Page</h1>
-                <button onClick={this.handleSubmit}>Log Out</button>
-            </div>
-        )
+        if (!this.props.projects) {
+            return null;
+        } else {
+            return (
+                <div>
+                    <h1>Home Page</h1>
+                    <button onClick={this.handleSubmit}>Log Out</button>
+
+                    <ul>
+                        {
+                            this.props.projects.map(project => {
+                                return <li>{project.name}</li>
+                            })
+                        }
+                    </ul>
+
+                    <Link to="/projects/new">Create New Project</Link>
+
+
+
+                </div>
+            )
+        }
+
     }
 }
 
