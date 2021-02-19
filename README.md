@@ -2,22 +2,11 @@
 
 Whatsana is a website clone of the project management tool Asana. Whatsana allows users to organize, create, and manage projects and tasks.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+* User Auth
 
-* System dependencies
+* Projects
 
-* Configuration
+* Tasks
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
