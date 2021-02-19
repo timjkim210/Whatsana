@@ -10,3 +10,14 @@ Whatsana is a website clone of the project management tool Asana. Whatsana allow
 
 * Tasks
 
+### User Auth
+
+Login or use the demo login on the login page.
+
+### Projects
+
+Create projects with different tasks on them that can be assigned to different users
+
+### Tasks
+
+Create tasks on a project, and mark them for completion, status and due date.
