@@ -1,24 +1,26 @@
-# README
+# Whatsana
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Whatsana is a website clone of the project management tool Asana. Whatsana allows users to organize, create, and manage projects and tasks.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+* User Auth
 
-* System dependencies
+* Projects
 
-* Configuration
+* Tasks
 
-* Database creation
+### User Auth
 
-* Database initialization
+![alt text](https://github.com/timjkim210/Whatsana/blob/master/Signin_page.png "Signin Page img")
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+Login or use the demo login on the login page.
 
-* Deployment instructions
+### Projects
 
-* ...
+Create projects with different tasks on them that can be assigned to different users
+
+### Tasks
+
+Create tasks on a project, and mark them for completion, status and due date.
