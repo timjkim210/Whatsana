@@ -1,7 +1,6 @@
-# README
+# Whatsana
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Whatsana is a website clone of the project management tool Asana. Whatsana allows users to organize, create, and manage projects and tasks.
 
 Things you may want to cover:
 
