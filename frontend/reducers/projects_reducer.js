@@ -5,7 +5,6 @@ const projectsReducer = (state = {}, action) => {
     
     switch (action.type) {
         case RECEIVE_PROJECTS:
-            debugger
             return action.projects
         case RECEIVE_PROJECT:
             const newProject = {[action.project.id]: action.project};

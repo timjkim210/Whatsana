@@ -32,9 +32,11 @@ class Home extends React.Component {
                                 return <li>{project.name}</li>
                             })
                         }
-                    </ul>
+                    
 
-                    <Link to="/projects/new">Create New Project</Link>
+                    <li><Link to="/projects/new">Create New Project</Link></li>
+
+                    </ul>
 
 
 

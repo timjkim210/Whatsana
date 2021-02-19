@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 export default ({currentUser}) => {
     const display = currentUser ? (
-        <h3>Hi, we'll put the home page here eventually</h3>
+        <Redirect to="/home" />
     ) : (
         <div className="splash-page-box">
             <div className="splash-nav">
