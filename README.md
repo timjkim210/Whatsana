@@ -12,6 +12,9 @@ Whatsana is a website clone of the project management tool Asana. Whatsana allow
 
 ### User Auth
 
+![alt text](https://github.com/timjkim210/Whatsana/blob/master/Signin_page.png "Signin Page img")
+
+
 Login or use the demo login on the login page.
 
 ### Projects
