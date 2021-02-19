@@ -4,17 +4,15 @@ Whatsana is a website clone of the project management tool Asana. Whatsana allow
 
 ## Technologies
 
-PostgreSQL
-Ruby on Rails
-React
-Redux
+* PostgreSQL
+* Ruby on Rails
+* React
+* Redux
 
 ## Features
 
 * User Auth
-
 * Projects
-
 * Tasks
 
 ### User Auth
