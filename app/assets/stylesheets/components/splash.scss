@@ -46,6 +46,7 @@
     background-color: rgba(43, 43, 43, 0.982);
     color: white;
     border-radius: 3px;
+    text-decoration: none;
 }
 
 #signup:hover {
@@ -55,3 +56,62 @@
 #login:hover {
     color: rgb(128,119,250)
 }
+
+.splash-text-box {
+    width: 45%;
+    height: 80%;
+    margin: 10%;
+    font-family: Arial;
+}
+
+.splash-heading {
+    font-size: 40px;
+    height: 200px;
+    line-height: 125%;
+}
+
+.splash-description {
+    border-top: solid white;
+    border-width: 1px;
+    padding-top: 20px;
+    position: relative;
+    width: 80%;
+    line-height: 180%;
+    height: 125px;
+}
+
+.splash-description:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border: 1px solid gray;
+    width: 20%;
+    top: -5px;
+}
+
+.splash-signup a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-family: Helvetica;
+    font-size: 15px;
+    padding: 8px;
+}
+
+
+
+.splash-main-page {
+    display: flex;
+    background-position: right;
+    min-height: 100vh;
+    background-size: 40% 100%;
+    background-image: image_url('yosemite.jpeg');
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+
+

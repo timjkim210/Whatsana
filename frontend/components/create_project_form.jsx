@@ -1,13 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 class CreateProjectForm extends React.Component {
     constructor(props) {
         super(props);
+        debugger
         this.state = {
             name: '',
             view: ''
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        
     };
 
     handleInput(field) {
@@ -17,9 +20,9 @@ class CreateProjectForm extends React.Component {
     };
 
     handleSubmit(e) {
-        e.preventDefault()
+        e.preventDefault;
         this.props.createProject(this.state)
-            .then(() => this.props.history.push('/project/edit'))
+            .then(() => this.props.history.push('/home'))
     }
 
 
@@ -30,7 +33,7 @@ class CreateProjectForm extends React.Component {
                 <Link to="/home">X</Link>
                 <h1>New Project</h1>
 
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>Project name</label>
 
                     <input 
@@ -39,15 +42,15 @@ class CreateProjectForm extends React.Component {
                     onChange={this.handleInput('name')}
                     />
 
-                    <label for="view-select">Default view</label>
+                    {/* <label for="view-select">Default view</label>
                     <select name="view" id="view-select" value={this.state.view}>
                         <option value="list">List</option>
                         <option value="board">Board</option>
                         <option value="timeline">Timeline</option>
                         <option value="calendar">Calendar</option>
-                    </select>
+                    </select> */}
 
-                    <button onClick={this.handleSubmit}>Create project</button>
+                    <button value="submit">Create project</button>
 
                 </form>
 

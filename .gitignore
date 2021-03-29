@@ -32,3 +32,6 @@ bundle.js
 bundle.js.map
 /public/assets
 
+.DS_Store
+app/assets/.DS_Store
+

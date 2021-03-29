@@ -1,0 +1,31 @@
+.home-box {
+    display: flex;
+    padding: 0px;
+}
+
+.home-sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    background-color: rgb(21,28,38);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 20px;
+    padding-left: 10px;
+    width: 15%;
+}
+
+.homebox-not-sidebar {
+    margin-left: 20%;
+}
+
+.logo-and-close {
+    color: white;
+    font-family: Arial;
+}
+
+.logo-and-close i {
+    height: 10px;
+    width: 10px;
+}
+

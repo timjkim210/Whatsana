@@ -6,7 +6,7 @@ import LoginContainer from './Auth/login_container';
 import HomeContainer from './home_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 import FourOhFour from './Splash/four_oh_four';
-import ProjectFormContainer from './project_form_container'
+import ProjectFormContainer from './project_form_container';
 
 
 

@@ -1,12 +1,17 @@
 import { connect } from 'react-redux';
 import { createProject } from '../actions/project_actions';
-import CreateProjectForm from './create_project_form'
+import CreateProjectForm from './create_project_form';
 
-const mapDispatchToProps = dispatch => {
-    return {
+const mapStateToProps = state => ({
+    project: {
+            name: '',
+        }
+})
+
+const mapDispatchToProps = dispatch => ({
         createProject: (proj) => dispatch(createProject(proj))
-    }
-};
+    })
 
-export default connect(null, mapDispatchToProps)(CreateProjectForm);
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateProjectForm);
 

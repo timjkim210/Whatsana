@@ -10,9 +10,7 @@ class Api::ProjectsController < ApplicationController
 
     def create
         @project = Project.new(project_params)
-        if @project.save
-            render :index
-        else
+        if !@project.save
             render json: @project.errors.full_messages
         end
     end

@@ -16,7 +16,28 @@ export default ({currentUser}) => {
                     <Link id="signup" to="/signup">Try For Free</Link>
                 </div>
             </div>
+            <div className="splash-main-page">
+                <div className="splash-text-box">
+                    <div className="splash-heading">
+                        <h1>Hi! Welcome to Whatsana, a website clone of Asana.</h1>
+                    </div>
+                    <div className="splash-description">
+                        <h2>
+                            From the small stuff to the big picture, Whatsana
+                            helps your team organize work and get stuff done.
+                        </h2>
+                    </div>
+                    <div className="splash-signup">
+                        <Link id="signup" to="/signup">Try For Free</Link>
+                    </div>
+                </div>
+                <div className="splash-img-box">
+                    
+                </div>
+            </div>
+            
         </div>
+
     )
 
     return display;
