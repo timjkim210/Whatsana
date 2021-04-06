@@ -16,9 +16,9 @@ class Api::ProjectsController < ApplicationController
     end
 
     def update
-        project = Project.find_by_id(params[:id])
-        if project && project.update(project_params)
-            render json: project
+        @project = Project.find_by(id: params[:id])
+        if @project && @project.update(project_params)
+            render :show
         else
             render json: "Project was not found"
         end

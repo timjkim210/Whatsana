@@ -3,7 +3,14 @@ export const fetchProjects = () => {
         method: "GET",
         url: "/api/projects",
     })
-}
+};
+
+export const fetchProject = (projectId) => {
+    return $.ajax({
+        method: "GET",
+        url: `/api/projects/${projectId}`
+    })
+};
 
 export const createProject = (project) => {
     return $.ajax({
@@ -13,4 +20,20 @@ export const createProject = (project) => {
             project
         }
     })
-}
+};
+
+export const destroyProject = projectId => {
+    return $.ajax({
+        url: `/api/projects/${projectId}`,
+        method: 'DELETE'
+    })
+};
+
+export const updateProject = project => {
+    return $.ajax({
+        url: `/api/projects/${project.id}`,
+        method: `PATCH`,
+        data: { project }
+    })
+};
+

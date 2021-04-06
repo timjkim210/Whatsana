@@ -7,12 +7,11 @@ const projectsReducer = (state = {}, action) => {
         case RECEIVE_PROJECTS:
             return action.projects
         case RECEIVE_PROJECT:
-            debugger
             const newProject = {[action.project.id]: action.project};
             return Object.assign({}, state, newProject);
         case REMOVE_PROJECT:
-            nextState = Object.assign({}, state);
-            delete nextState[action.project.id];
+            let nextState = Object.assign({}, state);
+            delete nextState[action.projectId];
             return nextState;
         case PROJECT_ERROR:
             alert(action.error);

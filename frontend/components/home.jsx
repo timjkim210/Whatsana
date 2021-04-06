@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProjectIndexItem from './project_index_item';
 
 class Home extends React.Component {
     constructor(props) {
@@ -41,18 +42,20 @@ class Home extends React.Component {
                     <div className="homebox-not-sidebar">
                         <h1>Home</h1>
                         <button onClick={this.handleSubmit}>Log Out</button>
+                        <div className="project-list">
+                            <h3>Projects</h3>
+                            <ul>
+                                {
+                                    this.props.projects.map(project => {
+                                        return <ProjectIndexItem project={project} key={project.id} />
+                                    })
+                                }
+                            
 
-                        <ul>
-                            {
-                                this.props.projects.map(project => {
-                                    return <li>{project.name}</li>
-                                })
-                            }
-                        
+                            <li id="create-project-btn"><Link to="/projects/new"><i class="fas fa-plus"></i>   New Project</Link></li>
 
-                        <li><Link to="/projects/new">Create New Project</Link></li>
-
-                        </ul>
+                            </ul>
+                        </div>
 
                     </div>
 

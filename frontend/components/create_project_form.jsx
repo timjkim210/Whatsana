@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class CreateProjectForm extends React.Component {
     constructor(props) {
         super(props);
-        debugger
         this.state = {
             name: '',
             view: ''
