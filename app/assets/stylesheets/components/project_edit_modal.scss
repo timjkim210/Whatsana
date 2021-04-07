@@ -1,0 +1,20 @@
+.backdrop {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgb(96, 96, 96);
+    opacity: 0.5;
+    padding: 100px
+}
+
+.modal {
+    background-color: white;
+    border-radius: 5px;
+    max-width: 500px;
+    min-height: 300px;
+    margin: auto;
+    opacity: 1.0;
+    color: black
+}

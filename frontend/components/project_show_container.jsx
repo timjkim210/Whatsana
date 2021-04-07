@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 import { connect } from 'react-redux';
 import { fetchProject, deleteProject, updateProject } from '../actions/project_actions';
 import ProjectShow from './project_show';
@@ -19,7 +20,6 @@ const mDTP = dispatch => ({
     fetchProject: projectId => dispatch(fetchProject(projectId)),
     deleteProject: projectId => dispatch(deleteProject(projectId)),
     updateProject: (project) => dispatch(updateProject(project))
-
 });
 
 export default connect(mSTP, mDTP)(ProjectShow);

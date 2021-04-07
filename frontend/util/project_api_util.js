@@ -22,6 +22,7 @@ export const createProject = (project) => {
     })
 };
 
+// eslint-disable-next-line arrow-body-style
 export const destroyProject = projectId => {
     return $.ajax({
         url: `/api/projects/${projectId}`,
