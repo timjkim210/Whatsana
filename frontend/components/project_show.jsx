@@ -16,7 +16,6 @@ class ProjectShow extends React.Component {
     }
 
     handleDropdown() {
-            
             let dropdownContent = document.querySelector('.dropdown-content');
             if (dropdownContent.style.display === "") {
                 dropdownContent.style.display = "block"
@@ -51,9 +50,7 @@ class ProjectShow extends React.Component {
 
                 </div>
                 <ProjectEditModal onClose={this.showModal} show={this.state.show} updateProject={this.props.updateProject} project={this.props.project} />
-
-
-                
+   
             </div>
         )
     }
