@@ -23,7 +23,6 @@ class Home extends React.Component {
 
     hideSidebar() {
             let sidebar = document.getElementById('sidebar');
-            debugger
             if (sidebar.style.width === "") {
                 sidebar.style.width = '0'
                 document.getElementById('home-box').style.marginLeft = "0";
@@ -34,7 +33,6 @@ class Home extends React.Component {
 
     showSidebar() {
             let sidebar = document.getElementById('sidebar');
-            debugger
             if (sidebar != null && sidebar.style.width === '0') {
                 sidebar.style.width = '17.5%';
             } 

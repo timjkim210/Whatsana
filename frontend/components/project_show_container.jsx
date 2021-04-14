@@ -1,6 +1,7 @@
 /* eslint-disable arrow-body-style */
 import { connect } from 'react-redux';
 import { fetchProject, deleteProject, updateProject } from '../actions/project_actions';
+import { fetchTasks, createTask } from '../actions/task_actions';
 import ProjectShow from './project_show';
 
 /*
@@ -12,14 +13,17 @@ name.
 
 const mSTP = (state, ownProps) => {
     return {
-            project: state.entities.projects[ownProps.match.params.id]
+            project: state.entities.projects[ownProps.match.params.id],
+            tasks: Object.values(state.entities.tasks)
     }
 }
 
 const mDTP = dispatch => ({
     fetchProject: projectId => dispatch(fetchProject(projectId)),
     deleteProject: projectId => dispatch(deleteProject(projectId)),
-    updateProject: (project) => dispatch(updateProject(project))
+    updateProject: (project) => dispatch(updateProject(project)),
+    fetchTasks: projectId => dispatch(fetchTasks(projectId)),
+    createTask: (projectId, task) => dispatch(createTask(projectId, task))
 });
 
 export default connect(mSTP, mDTP)(ProjectShow);

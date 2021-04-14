@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { fetchProject } from '../actions/project_actions';
+import { fetchTasks } from '../actions/task_actions';
 import ProjectEditModal from './project_edit_modal';
+import TaskIndex from '../components/Tasks/task_index'
 
 
 
@@ -26,9 +28,9 @@ class ProjectShow extends React.Component {
     
 
     componentDidMount() {
-        fetchProject(this.props.match.params.projectId);
+        this.props.fetchProject(this.props.project.id);
+        this.props.fetchTasks(this.props.project.id);
     }
-
    
 
     showModal() {
@@ -50,7 +52,10 @@ class ProjectShow extends React.Component {
 
                 </div>
                 <ProjectEditModal onClose={this.showModal} show={this.state.show} updateProject={this.props.updateProject} project={this.props.project} />
-   
+                
+                <ul>
+                    <TaskIndex tasks={this.props.tasks} project={this.props.project} createTask={this.props.createTask}/>
+                </ul> 
             </div>
         )
     }

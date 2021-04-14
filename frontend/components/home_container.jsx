@@ -4,10 +4,12 @@ import { logout } from '../actions/session_actions';
 import { createProject, fetchProjects } from '../actions/project_actions'
 import { allProjects } from '../reducers/selectors';
 
-const mapStateToProps = (state) => ({
-    currentUser: state.session.currentUser,
-    projects: allProjects(state)
-});
+const mapStateToProps = (state) => {
+    return {
+        currentUser: state.session.currentUser,
+        projects: allProjects(state)
+    }
+};
 
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),

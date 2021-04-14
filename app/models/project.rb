@@ -19,4 +19,8 @@ class Project < ApplicationRecord
     belongs_to :user,
     foreign_key: :owner_id,
     class_name: :User
+
+    has_many :tasks,
+    foreign_key: :project_id,
+    class_name: :Task 
 end

@@ -19,6 +19,10 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
+    has_many :projects,
+    foreign_key: :owner_id,
+    class_name: :Project
+
     #SPIRE
 
     def self.find_by_credentials(email, password)
