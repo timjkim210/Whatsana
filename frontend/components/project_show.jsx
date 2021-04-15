@@ -43,19 +43,30 @@ class ProjectShow extends React.Component {
 
     render() {
         return (
-            <div class="dropdown">
-                <p>{this.props.project.name}</p>
-                <button onClick={this.handleDropdown} class="dropdown-btn"><i class="fas fa-chevron-down"></i></button>
-                <div id="myDropdown" class="dropdown-content">
-                    <li onClick={this.showModal} > Edit project details</li> 
-                    <Link onClick={() => this.props.deleteProject(this.props.project.id)} to="/home">Delete Project</Link>
-
+            <div>
+                <div class="project-show-header">
+                    <p> <i id="project-icon" class="fas fa-list"></i> {this.props.project.name} <button onClick={this.handleDropdown} class="dropdown-btn"><i class="fas fa-chevron-down"></i></button></p>
+                    <div id="myDropdown" className="dropdown-content">
+                        <li onClick={this.showModal} > Edit project details</li> 
+                        <Link onClick={() => this.props.deleteProject(this.props.project.id)} to="/home">Delete Project</Link>
+                    </div>
+                    <ProjectEditModal onClose={this.showModal} show={this.state.show} updateProject={this.props.updateProject} project={this.props.project} />
+                    
                 </div>
-                <ProjectEditModal onClose={this.showModal} show={this.state.show} updateProject={this.props.updateProject} project={this.props.project} />
+
+                <div className="task-list">
+                    <button>Add Task</button>
+                    <div className="task-table-header">
+                        <h4>Task name</h4>
+                        <h4>Assignee</h4>
+                        <h4>Due Date</h4>
+                    </div>
+                     <h2 className="task-list-heading">To Do</h2>
+                    <ul>
+                        <TaskIndex tasks={this.props.tasks} project={this.props.project} createTask={this.props.createTask}/>
+                    </ul> 
+                </div>
                 
-                <ul>
-                    <TaskIndex tasks={this.props.tasks} project={this.props.project} createTask={this.props.createTask}/>
-                </ul> 
             </div>
         )
     }

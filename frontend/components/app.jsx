@@ -8,6 +8,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 import FourOhFour from './Splash/four_oh_four';
 import ProjectFormContainer from './project_form_container';
 import ProjectShowContainer from './project_show_container';
+import Sidebar from './sidebar'
 
 
 

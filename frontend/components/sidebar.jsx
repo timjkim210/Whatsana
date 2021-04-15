@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default class Sidebar extends React.Component {
     constructor(props) {
@@ -22,9 +23,14 @@ export default class Sidebar extends React.Component {
             <div>
                 <div id="sidebar" class="home-sidebar">
                         <div className="logo-and-close">
-                            <h1>Whatsana </h1> <span onClick={this.handleClick}><i id="chevron" class="fas fa-chevron-left"></i><i class="fas fa-bars"></i></span>
+                            <h1><Link to="/home">Whatsana</Link></h1> <span onClick={this.handleClick}><i id="chevron" class="fas fa-chevron-left"></i><i class="fas fa-bars"></i></span>
                         </div>
-                        <div className='main-side-nav'></div>
+                        <div className='main-side-nav'>
+                            <ul>
+                            <li><Link to="/home"><i class="fas fa-home"></i> Home</Link></li>
+                            <li><i class="far fa-check-circle"></i> My Tasks</li>
+                            </ul>
+                        </div>
                         <div className="favorites"></div>
                         <div className="side-team-projects"></div>
                 </div>

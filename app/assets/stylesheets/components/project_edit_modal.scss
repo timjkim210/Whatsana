@@ -5,16 +5,74 @@
     left: 0px;
     right: 0px;
     background-color: rgb(96, 96, 96);
+    padding: 100px;
     opacity: 0.5;
-    padding: 100px
+    z-index: 0;
 }
 
+
+
 .modal {
+    position: absolute;
     background-color: white;
     border-radius: 5px;
-    max-width: 500px;
-    min-height: 300px;
-    margin: auto;
-    opacity: 1.0;
-    color: black
+    width: 50%;
+    height: 500px;
+    margin-left: 25%;
+    margin-top: 100px;
+    color: black;
+    z-index: 1
 }
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: solid lightgray 1px
+}
+
+.edit-project-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.edit-project-name label {
+    color: gray;
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.edit-project-name input {
+    height: 20px;
+    border-color: lightgray;
+    outline: none;
+    border-style: solid;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.edit-project-name input:focus {
+    border-color: darkgray;
+}
+
+.owner-and-due-date {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 10px;
+    border-bottom: solid lightgray 1px;
+}
+
+.owner-and-due-date span:hover {
+    background-color: lightgray;
+}
+
+.edit-project-submit {
+    border: solid lightgray 1px;
+}
+
