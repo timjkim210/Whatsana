@@ -1,0 +1,23 @@
+.profile-backdrop {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgb(96, 96, 96);
+    padding: 100px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.profile-modal {
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    width: 50%;
+    height: 500px;
+    margin-left: 25%;
+    margin-top: 100px;
+    color: black;
+    z-index: 1
+}
