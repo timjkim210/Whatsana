@@ -14,7 +14,8 @@ name.
 const mSTP = (state, ownProps) => {
     return {
             project: state.entities.projects[ownProps.match.params.id],
-            tasks: Object.values(state.entities.tasks)
+            tasks: Object.values(state.entities.tasks),
+            projectId: ownProps.match.params.id
     }
 }
 

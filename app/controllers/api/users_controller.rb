@@ -10,9 +10,16 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def update
+        @user = current_user
+        @user.update(user_params)
+        render "api/users/show"
+
+    end
+
     private
 
     def user_params
-        params.require(:user).permit(:full_name, :email, :password)
+        params.require(:user).permit(:full_name, :email, :password, :id, :pronouns, :role, :team, :about)
     end
 end

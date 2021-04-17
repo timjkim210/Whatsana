@@ -43,8 +43,10 @@ class Home extends React.Component {
     }
 
     hideSidebar() {
+        console.log('Hi')
             let sidebar = document.getElementById('sidebar');
-            if (sidebar.style.width === "") {
+            // debugger
+            if (sidebar.style.width === "" || sidebar.style.width === '17.5%') {
                 sidebar.style.width = '0'
                 document.getElementById('home-box').style.marginLeft = "0";
                 document.getElementById('homebox-not-sidebar').style.marginLeft = "5%"
@@ -54,13 +56,17 @@ class Home extends React.Component {
 
     showSidebar() {
             let sidebar = document.getElementById('sidebar');
-            if (sidebar != null && sidebar.style.width === '0') {
+            // debugger
+            if (sidebar != null && sidebar.style.width === '0px') {
+                console.log('Hi')
                 sidebar.style.width = '17.5%';
+                document.getElementById('homebox-not-sidebar').style.marginLeft = "220px"
+
             } 
     }
 
     render() {
-        if (!this.props.projects) {
+        if (this.props === undefined) {
             return null;
         } else {
             return (
@@ -68,7 +74,7 @@ class Home extends React.Component {
                     <Sidebar hide={this.hideSidebar} show={this.showSidebar}/>
                     <div id="homebox-not-sidebar">
                         <div className="home-header">
-                            <h1 onClick={this.showSidebar()} ><i id='sidebar-open-btn' class="fas fa-bars"></i> Home</h1>
+                            <h1 onClick={this.showSidebar} ><i id='sidebar-open-btn' class="fas fa-bars"></i> Home</h1>
                             {/* <button onClick={this.handleSubmit}>Log Out</button> */}
                             <div className="home-dropdown-container">
                                 <button className="profile-btn"onClick={this.handleDropdown}>TK</button>
@@ -78,7 +84,7 @@ class Home extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <EditProfileModal onClose={this.showModal} show={this.state.show} />
+                        <EditProfileModal updateUser={this.props.updateUser} onClose={this.showModal} show={this.state.show} currentUser={this.props.currentUser} />
                         <div className="project-list">
                             <h3>Projects</h3>
                             <ul>

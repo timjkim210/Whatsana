@@ -28,8 +28,8 @@ class ProjectShow extends React.Component {
     
 
     componentDidMount() {
-        this.props.fetchProject(this.props.project.id);
-        this.props.fetchTasks(this.props.project.id);
+        this.props.fetchProject(this.props.projectId);
+        this.props.fetchTasks(this.props.projectId);
     }
    
 
@@ -42,10 +42,14 @@ class ProjectShow extends React.Component {
     };
 
     render() {
+        let name = this.props.project ? this.props.project.name : ''
+        if (!this.props.project) {
+            return null;
+        }
         return (
             <div>
                 <div class="project-show-header">
-                    <p> <i id="project-icon" class="fas fa-list"></i> {this.props.project.name} <button onClick={this.handleDropdown} class="dropdown-btn"><i class="fas fa-chevron-down"></i></button></p>
+                    <p> <i id="project-icon" class="fas fa-list"></i> {name} <button onClick={this.handleDropdown} class="dropdown-btn"><i class="fas fa-chevron-down"></i></button></p>
                     <div id="myDropdown" className="dropdown-content">
                         <li onClick={this.showModal} > Edit project details</li> 
                         <Link onClick={() => this.props.deleteProject(this.props.project.id)} to="/home">Delete Project</Link>

@@ -5,7 +5,8 @@ class ProjectEditModal extends React.Component {
     super(props);
     this.state = {
       id: this.props.project.id,
-      name: ''
+      name: '',
+      show: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -51,7 +52,7 @@ class ProjectEditModal extends React.Component {
       <div className="backdrop">
       </div>
       <div className="modal">
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <section className="modal-header">
           <h1>Project Details</h1>
           <button onClick={this.handleSubmit}>X</button>
@@ -76,7 +77,7 @@ class ProjectEditModal extends React.Component {
           <textarea cols="30" rows="10"></textarea>
           
 
-          <button className="edit-project-submit" value="submit">Update</button>
+          {/* <button className="edit-project-submit" value="submit">Update</button> */}
 
         </form>
         </div>

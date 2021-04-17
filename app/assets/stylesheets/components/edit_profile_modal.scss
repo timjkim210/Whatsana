@@ -21,3 +21,95 @@
     color: black;
     z-index: 1
 }
+
+.profile-modal-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: solid lightgray 1px
+}
+
+.profile-inputs {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 33% 33% 33%;
+}
+
+.profile-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.profile-input label {
+    color: gray;
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.profile-input input {
+    height: 20px;
+    border-color: lightgray;
+    outline: none;
+    border-style: solid;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.about-me label {
+    color: gray;
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.about-me textarea {
+    height: 60px;
+    border-color: lightgray;
+    outline: none;
+    border-style: solid;
+    border-radius: 5px;
+    width: 95%;
+    resize: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.save-changes {
+    padding: 10px;
+    color: white;
+    background-color: dodgerblue;
+    margin: 15px;
+    outline: none;
+    border-radius: 5px;
+    border-style: none;
+}
+
+.save-changes:hover {
+    background-color: rgb(40, 154, 265);
+}
+
+#email-field {
+    pointer-events: none;
+    color: gray;
+}
+
+#email-field {
+    color: gray
+}
+
+#email-field input[id="email"] {
+    pointer-events: none;
+    color: gray;
+}
+
