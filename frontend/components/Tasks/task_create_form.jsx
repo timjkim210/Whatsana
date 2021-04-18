@@ -48,8 +48,9 @@ class TaskCreateForm extends React.Component {
                 id="user"
                 onChange={this.handleInput('assignee_id')}
                  >
+                    <option disabled selected value>Assign a User</option>
                     {this.props.users.map(user => {
-                        return <option selected={(user.id === this.props.currentUser.id) ? "selected" : null} key={user.id} value={user.id}>{user.full_name}</option>
+                        return <option key={user.id} value={user.id}>{user.full_name}</option>
                     })}
                 </select>
 
@@ -63,6 +64,7 @@ class TaskCreateForm extends React.Component {
                 
             </div>
         )
+        // <option selected={(user.id === this.props.currentUser.id) ? "selected" : null}
     }
 }
 
