@@ -3,10 +3,15 @@ import React from 'react'
 class TaskIndexItem extends React.Component {
     constructor(props) {
         super(props)
+        this.handleClick = this.handleClick.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchUsers();
+    }
+
+    handleClick() {
+        this.props.deleteTask(this.props.projectId, this.props.task.id)
     }
 
     render() {
@@ -22,7 +27,7 @@ class TaskIndexItem extends React.Component {
                     }
                 })}</p>
                 <p>{this.props.task.due_date}</p>
-                {/* <button onClick={this.props.deleteTask(this.props.task.id)}>Delete</button> */}
+                <button onClick={this.handleClick}>Delete</button>
             </li>
         )
     }

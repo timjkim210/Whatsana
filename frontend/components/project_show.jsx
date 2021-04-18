@@ -69,7 +69,7 @@ class ProjectShow extends React.Component {
                     </div>
                      <h2 className="task-list-heading">To Do</h2>
                     <ul>
-                        <TaskIndex projectId={this.props.projectId} deleteTask={this.props.deleteTask} users={this.props.users} tasks={this.props.tasks} project={this.props.project} createTask={this.props.createTask} currentUser={this.props.currentUser} fetchUsers={this.props.fetchUsers}/>
+                        <TaskIndex projectId={this.props.projectId} deleteTask={this.props.deleteTask} users={this.props.users} tasks={this.props.tasks} project={this.props.project} createTask={this.props.createTask} currentUser={this.props.currentUser} fetchUsers={this.props.fetchUsers} fetchTasks={this.props.fetchTasks}/>
                     </ul> 
                 </div>
                 

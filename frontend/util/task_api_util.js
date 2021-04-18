@@ -14,3 +14,10 @@ export const createTask = (projectId, task) => {
         }
     })
 };
+
+export const deleteTask = (projectId, taskId) => {
+    return $.ajax({
+        method: "DELETE",
+        url: `/api/projects/${projectId}/tasks/${taskId}`
+    })
+}

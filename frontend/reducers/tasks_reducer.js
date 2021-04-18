@@ -11,6 +11,15 @@ const tasksReducer = (state = {}, action) => {
         case RECEIVE_TASK:
             const newTask = {[action.task.id]: action.task};
             return Object.assign({}, state, newTask);
+        case REMOVE_TASK:
+            nextState = Object.assign({}, state);
+            let keys = Object.keys(nextState)
+            keys.forEach(key => {
+                if (nextState[key].id === action.taskId) {
+                    delete nextState[key]
+                }
+            })
+            return nextState
         default:
             return state;
     }

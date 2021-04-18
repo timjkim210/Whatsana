@@ -37,7 +37,7 @@ export const createTask = (projectId, task) => dispatch => {
         .then(task => dispatch(receiveTask(task)))
 }
 
-export const deleteTask = (taskId) => dispatch => {
-    return APIUtil.deleteTask(taskId)
+export const deleteTask = (projectId, taskId) => dispatch => {
+    return APIUtil.deleteTask(projectId, taskId)
         .then(() => dispatch(removeTask(taskId)))
 }

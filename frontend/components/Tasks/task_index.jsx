@@ -8,7 +8,8 @@ class TaskIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchUsers()
+        this.props.fetchUsers();
+        this.props.fetchTasks(this.props.projectId);
     }
 
     render() {
