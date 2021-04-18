@@ -30,6 +30,7 @@ class ProjectShow extends React.Component {
     componentDidMount() {
         this.props.fetchProject(this.props.projectId);
         this.props.fetchTasks(this.props.projectId);
+        this.props.fetchUsers()
     }
    
 
@@ -64,10 +65,11 @@ class ProjectShow extends React.Component {
                         <h4>Task name</h4>
                         <h4>Assignee</h4>
                         <h4>Due Date</h4>
+                        <h4></h4>
                     </div>
                      <h2 className="task-list-heading">To Do</h2>
                     <ul>
-                        <TaskIndex tasks={this.props.tasks} project={this.props.project} createTask={this.props.createTask}/>
+                        <TaskIndex projectId={this.props.projectId} deleteTask={this.props.deleteTask} users={this.props.users} tasks={this.props.tasks} project={this.props.project} createTask={this.props.createTask} currentUser={this.props.currentUser} fetchUsers={this.props.fetchUsers}/>
                     </ul> 
                 </div>
                 

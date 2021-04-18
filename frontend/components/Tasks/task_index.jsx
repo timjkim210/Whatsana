@@ -7,14 +7,21 @@ class TaskIndex extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.fetchUsers()
+    }
+
     render() {
+         if (this.props === undefined) {
+            return null;
+         }
         return (
             <ul>
                 {this.props.tasks.map(task => {
-                    return <TaskIndexItem task={task} key={task.id} />
+                    return <TaskIndexItem users={this.props.users} key={task.id} projectId={this.props.projectId} deleteTask={this.props.deleteTask} task={task} key={task.id} currentUser={this.props.currentUser} fetchUsers={this.props.fetchUsers} users={this.props.users} />
                 })}
 
-                <TaskCreateForm createTask={this.props.createTask} project={this.props.project}/>
+                <TaskCreateForm projectId={this.props.projectId} users={this.props.users} createTask={this.props.createTask} project={this.props.project} currentUser={this.props.currentUser} fetchUsers={this.props.fetchUsers} />
             </ul>
         )
     }
@@ -22,4 +29,3 @@ class TaskIndex extends React.Component {
 
 
 export default TaskIndex;
-    

@@ -4,9 +4,15 @@ class TaskCreateForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ''
+            name: '',
+            assignee_id: '',
+            due_date: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.fetchUsers();
     }
 
     handleInput(field) {
@@ -23,15 +29,33 @@ class TaskCreateForm extends React.Component {
 
 
     render() {
+        if (this.props === undefined) {
+            return null;
+         }
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form className="create-task-form" onSubmit={this.handleSubmit}>
 
                 <input 
                 type="text"
                 placeholder="Add Task..."
                 value={this.state.name}
                 onChange={this.handleInput('name')}
+                />
+
+                <select
+                name="user"
+                id="user"
+                onChange={this.handleInput('assignee_id')}
+                 >
+                    {this.props.users.map(user => {
+                        return <option selected={(user.id === this.props.currentUser.id) ? "selected" : null} key={user.id} value={user.id}>{user.full_name}</option>
+                    })}
+                </select>
+
+                <input 
+                type="date"
+                onChange={this.handleInput('due_date')}
                 />
 
                 <button value="submit">Create Task</button>

@@ -61,7 +61,7 @@ class EditProfileModal extends React.Component {
                     for
                     type="text"
                     id="full_name"
-                    value={this.props.currentUser.full_name}
+                    value={this.state.full_name}
                     onChange={this.handleInput('full_name')}
                 />
             </div>

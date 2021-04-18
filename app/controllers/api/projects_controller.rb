@@ -18,11 +18,9 @@ class Api::ProjectsController < ApplicationController
 
     def update
         @project = Project.find_by(id: params[:id])
-        if @project && @project.update(project_params)
-            render :show
-        else
-            render json: "Project was not found"
-        end
+        @project.owner_id = current_user.id
+        @project.update(project_params)
+        render "api/projects/show"
     end
 
     def destroy
@@ -36,7 +34,7 @@ class Api::ProjectsController < ApplicationController
     private
 
     def project_params
-        params.require(:project).permit(:name, :description, :due_date, :view)
+        params.require(:project).permit(:id, :name, :description, :due_date, :view)
     end
 
 

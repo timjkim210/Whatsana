@@ -6,7 +6,6 @@ class Api::TasksController < ApplicationController
 
     def create
         @task = Task.new(task_params)
-        @task.assignee_id = current_user.id
         @task.project_id = params[:project_id]
 
         if @task.save
@@ -16,9 +15,17 @@ class Api::TasksController < ApplicationController
         end
     end
 
+    def destroy
+        task = Task.find_by_id(params[:id])
+        if task
+            task.delete
+        end
+        render json: task
+    end
+
     private
 
     def task_params
-        params.require(:task).permit(:name, :due_date, :status)
+        params.require(:task).permit(:name, :due_date, :status, :assignee_id)
     end
 end

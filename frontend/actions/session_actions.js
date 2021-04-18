@@ -4,11 +4,19 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const REMOVE_SESSION_ERRORS = 'REMOVE_SESSION_ERRORS';
+export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 
 export const receiveCurrentUser = currentUser => {
     return {type: RECEIVE_CURRENT_USER,
     currentUser}
 };
+
+export const receiveAllUsers = users => {
+    return {
+        type: RECEIVE_ALL_USERS,
+        users
+    }
+}
 
 export const logoutCurrentUser = () => ({
     type: LOGOUT_CURRENT_USER,
@@ -53,4 +61,9 @@ export const logout = () => dispatch => {
 export const updateUser = user => dispatch => {
     return APIUtil.updateUser(user)
         .then(user => dispatch(receiveCurrentUser(user)))
+}
+
+export const fetchUsers = () => dispatch => {
+    return APIUtil.fetchUsers()
+        .then(users => dispatch(receiveAllUsers(users)))
 }

@@ -5,8 +5,7 @@ class ProjectEditModal extends React.Component {
     super(props);
     this.state = {
       id: this.props.project.id,
-      name: '',
-      show: false
+      name: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.closeModal = this.closeModal.bind(this);

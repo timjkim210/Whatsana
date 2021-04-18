@@ -14,7 +14,11 @@ class Api::UsersController < ApplicationController
         @user = current_user
         @user.update(user_params)
         render "api/users/show"
+    end
 
+    def index
+        @users = User.all
+        render :index
     end
 
     private

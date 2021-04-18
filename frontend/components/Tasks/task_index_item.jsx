@@ -1,15 +1,31 @@
 import React from 'react'
 
-const TaskIndexItem = (props) => {
-    
+class TaskIndexItem extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
+    componentDidMount() {
+        this.props.fetchUsers();
+    }
+
+    render() {
+        if (this.props === undefined) {
+            return null;
+         }
         return(
             <li className="task-index-item">
-                <p>{props.task.name}</p>
-                <p>Asignee</p>
-                <p>Due Date</p>
+                <p>{this.props.task.name}</p>
+                <p>{this.props.users.map(user => {
+                    if (user.id === this.props.task.assignee_id) {
+                        return user.full_name
+                    }
+                })}</p>
+                <p>{this.props.task.due_date}</p>
+                {/* <button onClick={this.props.deleteTask(this.props.task.id)}>Delete</button> */}
             </li>
         )
-    
+    }
 }
 
 export default TaskIndexItem;
