@@ -6,7 +6,7 @@ const ProjectIndexItem = (props) => {
     
         return(
             <li>
-                 <Link to={`projects/${props.project.id}`}><i id="project-icon" class="fas fa-list"></i> {props.project.name}</Link>
+                 <Link to={`projects/${props.project.id}`}><i id="project-icon" class="fas fa-list"></i> {props.project.name} <i id='star-button' class="far fa-star"></i><i id='solid-star-button' class="fas fa-star"></i></Link> 
             </li>
         )
     
