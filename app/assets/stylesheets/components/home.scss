@@ -95,13 +95,13 @@
     font-family: arial;
     display: block;
     height: 40px;
-    width: 650px;
+    width: 600px;
     line-height: 40px;
     position: relative;
     left: 10px
 }
 
-.project-list li:hover {
+.project-list a:hover {
     background-color: whitesmoke;
 }
 
@@ -205,9 +205,11 @@
 
 #star-button {
     color: rgb(245, 205, 0);
+    cursor: default;
+    margin-left: 10px;
 }
 
 #solid-star-button {
     color: rgb(245, 205, 0);
-    display: none;
+    margin-left: 10px;
 }
