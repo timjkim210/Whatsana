@@ -69,15 +69,17 @@ class Home extends React.Component {
         if (this.props === undefined) {
             return null;
         } else {
+            let words = this.props.currentUser.full_name.split(' ')
+            let initials = words[0][0].toUpperCase() + words[words.length-1][0].toUpperCase()
             return (
                 <div id="home-box">
-                    <Sidebar hide={this.hideSidebar} show={this.showSidebar}/>
+                    <Sidebar hide={this.hideSidebar} show={this.showSidebar} projects={this.props.projects} fetchProjects={this.props.fetchProjects}/>
                     <div id="homebox-not-sidebar">
                         <div className="home-header">
                             <h1 onClick={this.showSidebar} ><i id='sidebar-open-btn' class="fas fa-bars"></i> Home</h1>
                             {/* <button onClick={this.handleSubmit}>Log Out</button> */}
                             <div className="home-dropdown-container">
-                                <button className="profile-btn"onClick={this.handleDropdown}>TK</button>
+                                <button className="profile-btn"onClick={this.handleDropdown}>{initials}</button>
                                 <div id="homeDropdown" className="home-dropdown-content">
                                     <li onClick={this.showModal}>My Profile Settings ...</li> 
                                     <li onClick={this.handleSubmit}>Logout</li>
@@ -87,17 +89,17 @@ class Home extends React.Component {
                         <EditProfileModal updateUser={this.props.updateUser} onClose={this.showModal} show={this.state.show} currentUser={this.props.currentUser} />
                         <div className="project-list">
                             <h3>Projects</h3>
-                            <ul>
+                            
                                 {
                                     this.props.projects.map(project => {
-                                        return <ProjectIndexItem project={project} key={project.id} />
+                                        return <ProjectIndexItem project={project} key={project.id} updateProject={this.props.updateProject} />
                                     })
                                 }
                             
 
-                            <li id="create-project-btn"><Link to="/projects/new"><i class="fas fa-plus"></i>   New Project</Link></li>
+                            <li id="create-project-btn"><Link to="/projects/new"><i id="plus-icon" class="fas fa-plus"></i>   New Project</Link></li>
 
-                            </ul>
+                            
                         </div>
 
                     </div>

@@ -16,10 +16,17 @@ export default class Sidebar extends React.Component {
         this.hide(e);
     }
 
+    componentDidMount() {
+        this.props.fetchProjects();
+    }
+
     
 
     render() {
-        return (
+        if (this.props === undefined) {
+            return null;
+        } else {
+             return (
             <div>
                 <div id="sidebar" class="home-sidebar">
                         <div className="logo-and-close">
@@ -31,10 +38,21 @@ export default class Sidebar extends React.Component {
                             <li><i class="far fa-check-circle"></i> My Tasks</li>
                             </ul>
                         </div>
-                        <div className="favorites"></div>
+                        <div className="favorites">
+                            <h3>Favorites</h3>
+                            <ul>
+                                {this.props.projects.map(project => {
+                                    if (project.favorite === true) {
+                                        return <li><div className="colored-bullet"></div><Link to={`projects/${project.id}`}>{project.name}</Link></li>;
+                                    }
+                                })}
+                            </ul>
+
+                        </div>
                         <div className="side-team-projects"></div>
                 </div>
             </div>
         )
+                            }
     }
 }

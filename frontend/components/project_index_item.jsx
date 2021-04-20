@@ -10,43 +10,35 @@ class ProjectIndexItem extends React.Component {
 
     toggleStar(e) {
         if (e.target.id === "star-button") {
-            debugger
+        this.props.project.favorite = !this.props.project.favorite;
+        this.props.updateProject(this.props.project)
         const solidStar = document.createElement('i')
-        solidStar.setAttribute("id", "star-button")
-        solidStar.setAttribute("class","far fa-star");
+        solidStar.setAttribute("id", "solid-star-button")
+        solidStar.setAttribute("class","fas fa-star");
 
         e.target.parentNode.appendChild(solidStar);
         e.target.remove();
         } else {
-            debugger
-            e.target.parentNode;
+        this.props.project.favorite = !this.props.project.favorite;
+        this.props.updateProject(this.props.project)
+        const star = document.createElement('i')
+        star.setAttribute("id", "star-button")
+        star.setAttribute("class","far fa-star");
 
-        const solidStar = document.createElement('i')
-        solidStar.setAttribute("id", "star-button")
-        solidStar.setAttribute("class","far fa-star");
-
-        e.target.parentNode.append(solidStar);
-        e.target.remove()
-            }
+        e.target.parentNode.parentNode.append(star);
+        e.target.parentNode.remove()
         }
-
-        
-
-            
-            
-
-        
-
-
+    }
 
     render() {
          return(
-             <div>
-                 
+             
+                <div>
                 <li>
-                    <Link to={`projects/${this.props.project.id}`}><i id="project-icon" class="fas fa-list"></i> {this.props.project.name} </Link> <div onClick={this.toggleStar}><span><i id='star-button' class="far fa-star"></i></span></div>
+                    <Link to={`projects/${this.props.project.id}`}><i id="project-icon" class="fas fa-list"></i> {this.props.project.name} </Link> <div onClick={this.toggleStar}><span>{(this.props.project.favorite === true) ? (<i id="solid-star-button" class="fas fa-star"></i>) : (<i id='star-button' class="far fa-star"></i>)}</span></div>
                 </li>
-            </div>
+                </div>
+            
         )
     }
 }
