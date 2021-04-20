@@ -28,30 +28,43 @@ class CreateProjectForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <Link to="/home">X</Link>
-                <h1>New Project</h1>
+            <div className="create-proj-container">
+                <div className="create-proj-first-half">
+                    <div className="create-close-header">
+                        <div></div>
+                        <button><Link to="/home">X</Link></button>
 
-                <form onSubmit={this.handleSubmit}>
-                    <label>Project name</label>
+                    </div>
 
-                    <input 
-                    type="text"
-                    value={this.state.name}
-                    onChange={this.handleInput('name')}
-                    />
+                    <form onSubmit={this.handleSubmit} className="create-proj-form">
 
-                    {/* <label for="view-select">Default view</label>
-                    <select name="view" id="view-select" value={this.state.view}>
-                        <option value="list">List</option>
-                        <option value="board">Board</option>
-                        <option value="timeline">Timeline</option>
-                        <option value="calendar">Calendar</option>
-                    </select> */}
+                        <h1>New Project</h1>
 
-                    <button value="submit">Create project</button>
+                        <label>Project name</label>
 
-                </form>
+                        <input 
+                        type="text"
+                        value={this.state.name}
+                        onChange={this.handleInput('name')}
+                        />
+
+                        {/* <label for="view-select">Default view</label>
+                        <select name="view" id="view-select" value={this.state.view}>
+                            <option value="list">List</option>
+                            <option value="board">Board</option>
+                            <option value="timeline">Timeline</option>
+                            <option value="calendar">Calendar</option>
+                        </select> */}
+
+                        <button value="submit">Create project</button>
+
+                    </form>
+
+                </div>
+
+                <div className="create-proj-second">
+
+                </div>
 
 
             </div>
