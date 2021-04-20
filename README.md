@@ -14,6 +14,8 @@ Whatsana is a website clone of the project management tool Asana. Whatsana allow
 * User Auth
 * Projects
 * Tasks
+* User Profile
+* Favorites
 
 ### User Auth
 
