@@ -56,7 +56,7 @@ class CreateProjectForm extends React.Component {
                             <option value="calendar">Calendar</option>
                         </select> */}
 
-                        <button value="submit"><Link to='/home'>Create project</Link></button>
+                        <button value="submit">Create Project</button>
 
                     </form>
 
