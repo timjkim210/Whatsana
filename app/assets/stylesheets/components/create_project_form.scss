@@ -68,7 +68,7 @@
     background-color: rgb(30, 144, 255);
 }
 
-create-proj-form input:focus + button:hover {
+.create-proj-form input:focus + button:hover {
     color: white;
     background-color: rgb(15, 124, 235);
 }
@@ -80,6 +80,17 @@ create-proj-form input:focus + button:hover {
     height: 30px;
     border: none;
 }
+
+.create-proj-form button a {
+    text-decoration: none;
+    color:black;
+}
+
+.create-proj-form input:focus + button a {
+    color: white;
+}
+
+
 
 .create-proj-form button:hover {
     cursor: pointer;

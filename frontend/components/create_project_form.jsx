@@ -20,8 +20,8 @@ class CreateProjectForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault;
-        this.props.createProject(this.state)
-            .then(() => this.props.history.push('/home'))
+        this.props.createProject(this.state);
+        this.props.history.push('/home');
     }
 
 
@@ -56,7 +56,7 @@ class CreateProjectForm extends React.Component {
                             <option value="calendar">Calendar</option>
                         </select> */}
 
-                        <button value="submit">Create project</button>
+                        <button value="submit"><Link to='/home'>Create project</Link></button>
 
                     </form>
 
