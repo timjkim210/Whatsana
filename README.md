@@ -29,7 +29,41 @@ Create projects with different tasks on them that can be assigned to different u
 
 ### Tasks
 
-Create tasks on a project.
+Create tasks on a project. I used Ruby on Rails associations and a belongs to relationship, to make sure each task is associated with a project and will show when the projects show component is opened.
+
+Here is a code snippet of that association in my Tasks model:
+
+```
+        class Task < ApplicationRecord
+            validates :name, presence: true
+
+            belongs_to :project,
+            foreign_key: :project_id,
+            class_name: :Project
+        end
+```
+
+And here is both the thunk action creator and the API Util function that fetches all the tasks that belong to a project
+
+```
+        export const fetchTasks = (projectId) => dispatch => {
+    return APIUtil.fetchTasks(projectId)
+        .then(tasks => {
+            return dispatch(receiveTasks(tasks))
+        })
+        };
+
+```
+
+```
+             export const fetchTasks = (projectId) => {
+            return $.ajax({
+                method: "GET",
+                url: `/api/projects/${projectId}/tasks`
+            })
+        };   
+```
+
 
 ### User Profile
 
