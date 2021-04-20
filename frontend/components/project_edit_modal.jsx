@@ -5,7 +5,9 @@ class ProjectEditModal extends React.Component {
     super(props);
     this.state = {
       id: this.props.project.id,
-      name: ''
+      name: '',
+      due_date: '',
+      description: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -38,8 +40,15 @@ class ProjectEditModal extends React.Component {
     this.props.onClose && this.props.onClose(e);
   }
 
-  closeModal() {
-    this.props.show = !this.props.show
+  closeModal(e) {
+    e.preventDefault;
+    this.onClose(e)
+     let dropdownContent = document.querySelector('.dropdown-content');
+            if (dropdownContent.style.display === "") {
+                dropdownContent.style.display = "block"
+            } else {
+                dropdownContent.style.display = "";
+            }
   }
 
   render() {
@@ -51,11 +60,13 @@ class ProjectEditModal extends React.Component {
       <div className="backdrop">
       </div>
       <div className="modal">
-        <form>
-          <section className="modal-header">
+        <section className="modal-header">
           <h1>Project Details</h1>
-          <button onClick={this.handleSubmit}>X</button>
-          </section>
+          <button onClick={this.closeModal}>X</button>
+        </section>
+
+        <form className="modal-form">
+          
 
           <section className='edit-project-name'>
           <label for="name">Name</label>
@@ -69,14 +80,26 @@ class ProjectEditModal extends React.Component {
           </section>
 
           <section className="owner-and-due-date">
-            <span>User</span>
-            <span>Due Date</span>
-          </section>
+                      <label for="date-inp">Due date</label>
 
-          <textarea cols="30" rows="10"></textarea>
+              <input 
+                id="date-inp"
+                type="date"
+                onChange={this.handleInput('due_date')}
+                placeholder="Add due date"
+                />          </section>
+
+          <div className="project-description">
+            <label for="about">Description</label>
+            <textarea 
+                id="description"
+                value={this.state.description}
+                onChange={this.handleInput('description')}
+            />
+          </div>     
           
 
-          {/* <button className="edit-project-submit" value="submit">Update</button> */}
+          <button onClick={this.handleSubmit} id="edit-project-submit" value="submit">Save Changes</button>
 
         </form>
         </div>

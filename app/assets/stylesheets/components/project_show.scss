@@ -115,7 +115,11 @@
 }
 
 .task-list button:hover {
-    background-color: (40, 154, 265);
+  cursor: pointer;
+}
+
+#create-button:hover {
+    background-color: whitesmoke;
     cursor: pointer;
 }
 

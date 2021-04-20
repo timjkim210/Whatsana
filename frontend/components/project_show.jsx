@@ -67,7 +67,7 @@ class ProjectShow extends React.Component {
                 </div>
 
                 <div className="task-list">
-                    <button onClick={this.handleClick}><span id="create-plus"><i id="plus-icon" class="fas fa-plus" /></span> Add Task</button>
+                    <button id="create-button" onClick={this.handleClick}><span id="create-plus"><i id="plus-icon" class="fas fa-plus" /></span> Add Task</button>
                     <div className="task-table-header">
                         <h4>Task name</h4>
                         <h4>Assignee</h4>
