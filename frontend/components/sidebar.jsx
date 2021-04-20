@@ -38,6 +38,12 @@ export default class Sidebar extends React.Component {
                             <li><i class="far fa-check-circle"></i> My Tasks</li>
                             </ul>
                         </div>
+                        <div className="tims-links">
+                            <h3>Tim's Links</h3>
+                            <li><a href="https://github.com/timjkim210">Github</a></li>
+                            <li><a href="https://www.linkedin.com/in/timothy-kim-0a818a99/">LinkedIn</a></li>
+                            <li><a href="https://angel.co/u/timothy-kim-26">AngelList</a></li>
+                        </div>
                         <div className="favorites">
                             <h3>Favorites</h3>
                             <ul>

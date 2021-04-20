@@ -275,3 +275,32 @@
     margin-right: 12px;
 }
 
+.tims-links {
+    text-decoration: none;
+    list-style: none;
+    color: #cbd4db;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.tims-links h3 {
+    padding: 10px;
+
+}
+
+.tims-links li {
+    padding-top: 10px;
+    height: 10px;
+    color: #cbd4db;
+    width: 100%;
+    line-height: 10px;
+    padding: 10px;
+}
+
+.tims-links li:hover {
+    background-color: darkslategray;
+}
+
