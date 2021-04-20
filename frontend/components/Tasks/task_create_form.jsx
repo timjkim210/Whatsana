@@ -38,6 +38,7 @@ class TaskCreateForm extends React.Component {
 
                 <input 
                 type="text"
+                id="add-task"
                 placeholder="Add Task..."
                 value={this.state.name}
                 onChange={this.handleInput('name')}
@@ -48,15 +49,17 @@ class TaskCreateForm extends React.Component {
                 id="user"
                 onChange={this.handleInput('assignee_id')}
                  >
-                    <option disabled selected value>Assign a User</option>
+                    <option id="default assignee" disabled selected value>Assign this task</option>
                     {this.props.users.map(user => {
                         return <option key={user.id} value={user.id}>{user.full_name}</option>
                     })}
                 </select>
 
                 <input 
+                id="date-inp"
                 type="date"
                 onChange={this.handleInput('due_date')}
+                placeholder="Add due date"
                 />
 
                 <button value="submit">Create Task</button>

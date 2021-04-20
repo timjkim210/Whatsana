@@ -15,6 +15,7 @@ class ProjectShow extends React.Component {
             show: false
         };
         this.showModal = this.showModal.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleDropdown() {
@@ -25,6 +26,10 @@ class ProjectShow extends React.Component {
                 dropdownContent.style.display = "";
             }
         }
+
+    handleClick() {
+        document.getElementById("add-task").focus();
+    }
     
 
     componentDidMount() {
@@ -51,16 +56,18 @@ class ProjectShow extends React.Component {
             <div>
                 <div class="project-show-header">
                     <p> <i id="project-icon" class="fas fa-list"></i> {name} <button onClick={this.handleDropdown} class="dropdown-btn"><i class="fas fa-chevron-down"></i></button></p>
+                    <div className="proj-drop-container">
                     <div id="myDropdown" className="dropdown-content">
                         <li onClick={this.showModal} > Edit project details</li> 
                         <Link onClick={() => this.props.deleteProject(this.props.project.id)} to="/home">Delete Project</Link>
+                    </div>
                     </div>
                     <ProjectEditModal onClose={this.showModal} show={this.state.show} updateProject={this.props.updateProject} project={this.props.project} />
                     
                 </div>
 
                 <div className="task-list">
-                    <button>Add Task</button>
+                    <button onClick={this.handleClick}><span id="create-plus"><i id="plus-icon" class="fas fa-plus" /></span> Add Task</button>
                     <div className="task-table-header">
                         <h4>Task name</h4>
                         <h4>Assignee</h4>
@@ -72,6 +79,7 @@ class ProjectShow extends React.Component {
                         <TaskIndex projectId={this.props.projectId} deleteTask={this.props.deleteTask} users={this.props.users} tasks={this.props.tasks} project={this.props.project} createTask={this.props.createTask} currentUser={this.props.currentUser} fetchUsers={this.props.fetchUsers} fetchTasks={this.props.fetchTasks}/>
                     </ul> 
                 </div>
+                
                 
             </div>
         )

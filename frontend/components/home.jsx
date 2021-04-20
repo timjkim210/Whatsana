@@ -97,7 +97,7 @@ class Home extends React.Component {
                                 }
                             
 
-                            <li id="create-project-btn"><Link to="/projects/new"><i id="plus-icon" class="fas fa-plus"></i>   New Project</Link></li>
+                            <li id="create-project-btn"><Link to="/projects/new"><span id="plus-icon"><i  class="fas fa-plus"></i></span>   New Project</Link></li>
 
                             
                         </div>
