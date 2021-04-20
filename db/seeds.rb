@@ -13,3 +13,13 @@ demo = User.create({
     email: 'demo_user@demo_login.com',
     password: '123456'
 })
+
+User.create({
+    full_name: 'Tim Kim',
+    email: 'timjkim210@gmail.com',
+    password: 'fire88',
+    pronouns: 'he/him/his',
+    role: 'Software Engineer',
+    team: 'Engineering',
+    about: 'Hi. My name is Tim. I like basketball!'
+})
