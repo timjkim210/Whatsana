@@ -39,6 +39,8 @@ Link to a User Profile page where user data can be updated and saved.
 
 Click the star next to projects in order to pin them to the Favorites section in the sidebar. The list of projects in the favorites section will also link to the project.
 
+https://user-images.githubusercontent.com/64303230/115470994-1add5a00-a1ec-11eb-9ec6-86327b88e0e1.mp4
+
 For this feature I used a Javascript function to toggle between a logos, an empty star logo and a colored in star. At the sametime the function also updates the state of the project, and calls an action to update the project in the back end.
 
 ```
