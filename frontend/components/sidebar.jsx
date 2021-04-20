@@ -53,7 +53,6 @@ export default class Sidebar extends React.Component {
                                     }
                                 })}
                             </ul>
-
                         </div>
                         <div className="side-team-projects"></div>
                 </div>

@@ -55,7 +55,7 @@ class ProjectShow extends React.Component {
         return (
             <div>
                 <div class="project-show-header">
-                    <p> <i id="project-icon" class="fas fa-list"></i> {name} <button onClick={this.handleDropdown} class="dropdown-btn"><i class="fas fa-chevron-down"></i></button></p>
+                    <p> <a href="#/home"><i class="fas fa-arrow-left"></i></a> {name} <button onClick={this.handleDropdown} class="dropdown-btn"><i class="fas fa-chevron-down"></i></button></p>
                     <div className="proj-drop-container">
                     <div id="myDropdown" className="dropdown-content">
                         <li onClick={this.showModal} > Edit project details</li> 
