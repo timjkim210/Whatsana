@@ -70,15 +70,15 @@ toggleStar(e) {
    
 ```
    <div className="favorites">
-                            <h3>Favorites</h3>
-                            <ul>
-                                {this.props.projects.map(project => {
-                                    if (project.favorite === true) {
-                                        return <li><div className="colored-bullet"></div><Link to={`projects/${project.id}`}>{project.name}</Link></li>;
-                                    }
-                                })}
-                            </ul>
-                        </div>
+     <h3>Favorites</h3>
+     <ul>
+       {this.props.projects.map(project => {
+          if (project.favorite === true) {
+            return <li><div className="colored-bullet"></div><Link to={`projects/${project.id}`}>{project.name}</Link></li>;
+          }
+        })}
+      </ul>
+    </div>
 ```
    
    
