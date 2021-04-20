@@ -64,11 +64,11 @@ toggleStar(e) {
         }
     }
     
-    ```
+```
    
    In the sidebar component, I iterate through my projects and check to see if its favorite property is true or false. If it is true I display it:
    
-   ```
+```
    <div className="favorites">
                             <h3>Favorites</h3>
                             <ul>
