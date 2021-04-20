@@ -29,4 +29,12 @@ Create projects with different tasks on them that can be assigned to different u
 
 ### Tasks
 
-Create tasks on a project, and mark them for completion, status and due date.
+Create tasks on a project.
+
+### User Profile
+
+Link to a User Profile page where user data can be updated and saved.
+
+### Favorites
+
+Click the star next to projects in order to pin them to the Favorites section in the sidebar. The list of projects in the favorites section will also link to the project.
